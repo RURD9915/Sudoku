@@ -1,0 +1,372 @@
+body {
+  padding-top: 80px;
+  background-color: #c1c1c1;
+}
+
+.section {
+  padding: 50px;
+  margin-bottom: 30px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#Home {
+  min-height: 80vh;
+}
+
+nav {
+  background-color: #000000;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  opacity: 80%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin-right: 850px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+nav ul li {
+  margin: 20px;
+  position: relative;
+  flex-grow: 1;
+}
+
+/* .dropdown {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: black;
+  opacity: 80%;
+  padding: 20px;
+  margin-top: 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+.dropdown li {
+  width: 100%;
+  margin: 5px;
+}
+
+.dropdown li a {
+  color: white;
+  padding: 8px;
+  display: block;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav ul li:hover .dropdown {
+  display: block;
+} */
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border: 2px grey solid;
+  background-color: #444;
+  border-radius: 15px;
+}
+
+nav ul li a:hover {
+  background-color: #7a7a7a;
+  border: #ffffff 2px solid;
+  transition: ease-in 0.3s;
+}
+
+nav button {
+  cursor: pointer;
+  color: white;
+  padding: 10px 15px;
+  border: 2px grey solid;
+  background-color: #6b0303;
+  border-radius: 15px;
+  margin-right: 40px;
+}
+
+nav button:hover {
+  background-color: #f30404;
+  border: #ffffff 2px solid;
+  transition: ease-in 0.2s;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  background-color: #2e2e2e;
+  margin: 5% auto;
+  padding: 20px;
+  border: 2px solid #000000;
+  width: 60%;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.4s;
+}
+
+.close {
+  color: #f6f6f6;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #ffcc00;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content h1 {
+  margin: 0 0 20px;
+  font-size: 24px;
+  color: #ff0000;
+  text-align: center;
+}
+
+.modal-content p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #ffd5d5;
+  text-align: center;
+}
+
+.modal-content input{
+  background-color: #d3d3d3;
+  margin: 10px;
+  padding: 8px;
+  border: 2px solid #000000;
+  width: 200px;
+  height: 22px;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(36, 36, 36);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 20px; /* Adds space between the buttons */
+}
+
+
+.modal-content button {
+  cursor: pointer;
+  color: white;
+  padding: 10px 15px;
+  width: 90px;
+  border: 2px grey solid;
+  background-color: #6b0303;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.modal-content button:hover {
+  background-color: #f30404;
+  border: #ffffff 2px solid;
+  transition: ease-in 0.2s;
+}
+
+/* Animation for modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Table */
+.custom-input {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: black;
+  font-size: 16px;
+  cursor: default;
+  pointer-events: auto; /* Enable pointer events */
+}
+
+
+.custom-input:focus {
+  caret-color: transparent; /* Hide the blinking caret */
+}
+
+.sudoku-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.sudoku-table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.sudoku-table td {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+  border: 2px solid #444;
+  transition: background-color 0.3s;
+  position: relative;
+  cursor: default;
+}
+
+.sudoku-table td:hover {
+  background-color: #dfdfdf;
+  cursor: default;
+}
+
+.sudoku-table tr:nth-child(3n + 1) td {
+  border-top: 4px solid #000;
+}
+
+.sudoku-table td:nth-child(3n + 1) {
+  border-left: 4px solid #000;
+}
+
+.sudoku-table td:nth-child(3n + 3) {
+  border-right: 4px solid #000;
+}
+
+.sudoku-table tr:nth-child(9) td {
+  border-bottom: 4px solid #000;
+}
+
+tr .filled-cell {
+  background-color: #b9b9b9;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.sudoku-timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #dfdfdf;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  margin: 0 auto;
+}
+
+.timer-container {
+  text-align: center;
+}
+
+#userNameDisplay {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin: 5px 0;
+}
+
+#timer {
+  font-size: 24px;
+  color: #007bff;
+  margin: 5px 0;
+}
+
+#currentTime {
+  font-size: 16px;
+  color: #666;
+  margin: 5px 0;
+}
+
+p {
+  text-align: center;
+  font-size: 18px;
+}
+
+
+/* Logout grids */
+.sudoku-container {
+  display: flex;
+  background-color: white;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 33px); /* 9 columns */
+  grid-template-rows: repeat(9, 33px); /* 9 rows */
+  gap: 2px; /* Space between cells */
+  border: 2px solid #000; /* Optional: border around the grid */
+}
+
+.sudoku-grid div {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border: 2px solid #c1c1c1;
+}
+
+/* Background color for cells based on state */
+.sudoku-grid div.filled-cell {
+  background-color: lightgrey; /* Light grey for filled cells */
+  color: black; /* Text color */
+}
+
+.sudoku-grid div.red-cell {
+  background-color: lightcoral; /* Red for incorrect or empty cells */
+  color: black; /* Text color */
+}
+
+.sudoku-grid div.green-cell {
+  background-color: lightgreen; /* Green for correct answers */
+  color: black; /* Text color */
+}
+
+.sudoku-grid div.default {
+  background-color: lightgrey; /* Light grey for solution grid numbers */
+  color: black; /* Text color */
+}

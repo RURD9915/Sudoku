@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="Back.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="Page">
+    <h1>SUDOKU !!!</h1>
+    <div id="difficult_choice" class="difficulty_choice">
+      <button type="button">Difficult</button>
+    </div>
+  
+    <div class="Menu">
+        <ul>
+          <li>
+            <button type = "button" onclick="sudoku()" onmouseover="disable_dropdown()">PLAY <i class="fa fa-play-circle" id="icons"></i></button>
+          </li>
+          <li>
+            <button type = "button" onmouseover="show_dropdown()">DIFFICULTY <i class="fa fa-bolt" id="icons"></i></button>
+          <div class="dropdown" id="dropdown"  onmouseleave="disable_dropdown()">
+            <ul>
+              <li><button type="button" onclick="set('EASY')">EASY</button></li>
+            <li><button type="button" onclick="set('MEDIUM')">MEDIUM</button></li>
+            <li><button type="button" onclick="set('HARD')">HARD</button></li>
+            </ul>
+          </div>
+          </li>
+          <li>
+            <button type = "button" onmouseover="disable_dropdown()">SETTINGS <i class="fa fa-cog" id="icons"></i></button>
+          </li>
+          <li>
+            <button type = "button" onmouseover="disable_dropdown()" onclick="Get_support()">CONTACT <i class="fa fa-address-book" id="icons"></i></button>
+          </li>
+          <li>
+            <button type = "button" onclick="Exit()" onmouseover="disable_dropdown()">EXIT <i class="fa fa-sign-out" id="icons"></i></button>
+          </li>
+        </ul>
+    </div>
+  </div>
+  <div id="logoutModal" class="modal">
+    <div class="modal-content">
+      <h1>ARE YOU SURE YOU WANT TO EXIT THE GAME?</h1>
+      <div id="modal-buttons">
+        <button id="close_exit" onclick="closeModal('confirm')">YES</button>
+        <button id="exit" onclick="closeModal('cancel')">CANCEL</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="play_modal" class="modal">
+    <div class="modal-content">
+      <h1>SELECT A DIFFICULTY TO PLAY IN.</h1>
+      <div id="modal-buttons-play">
+        <button id="exit_play" onclick="closeModalplay()">OK</button>
+      </div>
+    </div>
+  </div>
+    <script src="Back.js"></script>
+</body>
+</html>

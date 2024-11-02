@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="Sudoku.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="Index.html">Return</a>
+        </li>
+      </ul>
+      <button id="startButton" onclick="startTimer()">Start</button>
+      <button id="startButton" onclick="stopTimer()">Pause</button>
+      <button id="startButton" onclick="displaysubmit()">Check Progress</button>
+      <button onclick="logout()">Finish</button>
+    </nav>
+
+    <section id="Home" class="section">
+      <div id="sudoku-section">
+        <h1>Sudoku Puzzle</h1>
+        <div class="sudoku-timer-container">
+          <div class="timer-container">
+            <p id="userNameDisplay">Player :</p>
+            <p id="timer">Time: 00:00:00</p>
+            <p id="currentTime"></p>
+          </div>
+        </div>
+        <div class="sudoku-container">
+          <table class="sudoku-table">
+            <tbody id="sudoku-body">
+              <!-- Sudoku cells will be generated here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <div id="logoutModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h1>You have been logged out.</h1>
+        <p id="elapsedTime">Elapsed time: 0s</p>
+        <p id="moves">Number of moves: 0</p>
+        <p id="correctMoves">Correct moves: 0</p>
+        <p id="correctCells">Number of cells correct: 0</p>
+        <p id="accuracy">Accuracy: 0%</p>
+        <p id="completionPercentage">Completion: 0%</p>
+
+        <div class="sudoku-container">
+          <div class="sudoku-grid" id="solutionGrid"></div>
+          <div class="sudoku-grid" id="currentGrid"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="submitModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModalsubmit()">&times;</span>
+        <h1>The details of your current completion status.</h1>
+        <p id="elapsedTimesubmit">Elapsed time: 0s</p>
+        <p id="movessubmit">Number of moves: 0</p>
+        <p id="correctMovessubmit">Correct moves: 0</p>
+        <p id="correctCellssubmit">Number of cells correct: 0</p>
+        <p id="accuracysubmit">Accuracy: 0%</p>
+        <p id="completionPercentagesubmit">Completion: 0%</p>
+      </div>
+    </div>
+
+    <div id="NameModal" class="modal" style="display: none;">
+      <div class="modal-content" style="width: 600px; height: 150px; color: rgb(255, 198, 198); font-size: 18px;">
+        <label for="nameInput">Please enter your name:</label>
+        <input type="text" id="nameInput" placeholder="Your name" />
+        <br /><br />
+        <div class="button-container">
+          <button id="okButton">OK</button>
+          <button id="cancelButton">CANCEL</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="NameCancelModal" class="modal" style="display: none;">
+      <div class="modal-content" style="width: 300px; height: 80px; color: rgb(255, 198, 198);">
+        <span class="close" onclick="closeModalcancel()">&times;</span>
+        <p style="font-size: 20px; margin: 20px;">Name is needed to start the timer.</p>
+      </div>
+    </div>
+
+    <div id="TimerstopModal" class="modal" style="display: none;">
+      <div class="modal-content" style="width: 300px; height: 80px; color: rgb(255, 198, 198);">
+        <span class="close" onclick="closeModalStop()">&times;</span>
+        <p style="font-size: 20px; margin: 20px;">The Timer has been stopped and the cells no longer accept input.</p>
+      </div>
+    </div>
+    
+    </div>
+    <script src="sudoku.js"></script>
+  </body>
+</html>
